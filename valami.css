@@ -93,6 +93,7 @@ h1 {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
 }
 
 #christmas-story h2 {
@@ -109,3 +110,33 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
 }
+.card {
+    background-color: #fff8e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+input[type="text"],
+input[type="file"] {
+    margin: 10px 0;
+}
+
+#imagePreview img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+

@@ -71,3 +71,73 @@ function createSnowflake() {
 
 
 setInterval(createSnowflake, 150);
+
+const uploadedImages = [];
+
+function uploadImage() {
+    const nameInput = document.getElementById('imageName');
+    const fileInput = document.getElementById('imageUpload');
+    const name = nameInput.value.trim();
+    const file = fileInput.files[0];
+
+    if (!name) {
+        alert('Kérlek add meg a kép nevét!');
+        return;
+    }
+
+    if (!file) {
+        alert('Kérlek válassz egy képet!');
+        return;
+    }
+
+    const reader = new FileReader();
+
+    
+    reader.onload = function(event) {
+        const imagePreview = document.getElementById('imagePreview');
+        const imageData = {
+            name: name,
+            imageUrl: event.target.result,
+            votes: 0
+        };
+
+        
+        uploadedImages.push(imageData);
+
+        
+        displayUploadedImages();
+    };
+
+    reader.readAsDataURL(file); 
+
+   
+    nameInput.value = '';
+    fileInput.value = '';
+}
+
+function displayUploadedImages() {
+    const imagesList = document.getElementById('imagesList');
+    imagesList.innerHTML = '';
+
+    uploadedImages.forEach((imageData, index) => {
+        const imageCard = document.createElement('div');
+        imageCard.className = 'col-md-4 mb-3';
+        imageCard.innerHTML = `
+            <div class="card text-center">
+                <img src="${imageData.imageUrl}" alt="${imageData.name}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">${imageData.name}</h5>
+                    <p>Szavazatok: <span id="votes-${index}">${imageData.votes}</span></p>
+                    <button class="btn btn-success" onclick="vote(${index})">Szavazok</button>
+                </div>
+            </div>
+        `;
+        imagesList.appendChild(imageCard);
+    });
+}
+
+function vote(index) {
+    const votesElement = document.getElementById(`votes-${index}`);
+    uploadedImages[index].votes += 1;
+    votesElement.textContent = uploadedImages[index].votes;
+}
