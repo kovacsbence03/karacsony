@@ -1,0 +1,111 @@
+body {
+    background-color: #f0f8ff; 
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://www.transparenttextures.com/patterns/snow.png'); 
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    color: #d32f2f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gift-card {
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff8e1; 
+    border: 2px solid #c2185b; 
+    border-radius: 10px;
+}
+
+.gift-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: #7b1fa2; 
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #388e3c; 
+    font-weight: bold;
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #c2185b; 
+}
+
+.vote-count {
+    font-size: 1.5rem;
+    color: #d32f2f; 
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #388e3c; 
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2e7d32; 
+}
+
+.btn-primary:active {
+    background-color: #1b5e20 !important; 
+}
+body {
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+  
+}
+
+h1 {
+    text-align: center;
+    color: #d32f2f;
+    margin-top: 20px;
+}
+
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear infinite;
+}
+
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+#christmas-story {
+    background-color: #fff8e1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#christmas-story h2 {
+    color: #c2185b;
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#christmas-story p {
+    color: #555;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
